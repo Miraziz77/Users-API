@@ -20,6 +20,7 @@ A production-ready user management API built with FastAPI. Covers registration, 
 ## Project Architecture
 
 The project follows a **modular monolith** pattern with clear separation of concerns:
+```
 app/
 ├── core/           # Config, database, security, email
 ├── models/         # SQLAlchemy ORM models
@@ -30,12 +31,15 @@ app/
 ├── tasks/          # Celery background tasks
 ├── scripts/        # CLI utilities (e.g. create admin)
 └── alembic/        # Database migrations
+```
 
 Each request goes through:
+```
 Router → Service → Repository → Database
 - **Repositories** handle all SQL queries — no business logic
 - **Services** contain all business logic — no HTTP concerns
 - **Routers** are thin: validate input, call service, return response
+```
 
 ---
 
