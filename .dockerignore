@@ -1,0 +1,10 @@
+.venv
+__pycache__
+*.pyc
+*.pyo
+.env
+.git
+.gitignore
+celerybeat-schedule
+*.egg-info
+.pytest_cache
